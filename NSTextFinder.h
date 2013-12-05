@@ -10,7 +10,7 @@
 
 enum {LAST_FIND_UNKNOWN, LAST_FIND_NO, LAST_FIND_YES};
 
-@interface NSTextFinder : NSObject
+/*@interface NSTextFinder : NSObject
 {
     #if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_5
     //10.6
@@ -161,4 +161,4 @@ enum {LAST_FIND_UNKNOWN, LAST_FIND_NO, LAST_FIND_YES};
 - (void)windowDidUpdate:(id)arg1;
 
 @end
-#endif
+#endif*/

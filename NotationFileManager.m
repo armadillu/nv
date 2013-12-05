@@ -28,6 +28,7 @@
 #import "NoteObject.h"
 #import "GlobalPrefs.h"
 #import "NSData_transformations.h"
+#import "openssl/md5.h"
 #include <sys/param.h>
 #include <sys/mount.h>
 

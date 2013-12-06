@@ -50,6 +50,7 @@ static NSString *TextReplacementInNoteBodyKey = @"TextReplacementInNoteBody";
 static NSString *QuitWhenClosingMainWindowKey = @"QuitWhenClosingMainWindow";
 static NSString *TabKeyIndentsKey = @"TabKeyIndents";
 static NSString *PastePreservesStyleKey = @"PastePreservesStyle";
+static NSString *PastePreservesColorKey = @"PastePreservesColor";
 static NSString *AutoFormatsDoneTagKey = @"AutoFormatsDoneTag";
 static NSString *AutoFormatsListBulletsKey = @"AutoFormatsListBullets";
 static NSString *AutoSuggestLinksKey = @"AutoSuggestLinks";
@@ -343,6 +344,18 @@ static void sendCallbacksForGlobalPrefs(GlobalPrefs* self, SEL selector, id orig
     
     return [defaults boolForKey:PastePreservesStyleKey];
 }
+	
+- (void)setPastePreservesColor:(BOOL)value sender:(id)sender {
+    [defaults setBool:value forKey:PastePreservesColorKey];
+    
+	SEND_CALLBACKS();
+}
+	
+- (BOOL)pastePreservesColor {
+    
+    return [defaults boolForKey:PastePreservesColorKey];
+}
+
 
 - (void)setAutoFormatsDoneTag:(BOOL)value sender:(id)sender {
     [defaults setBool:value forKey:AutoFormatsDoneTagKey];

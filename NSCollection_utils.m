@@ -27,6 +27,7 @@
 #import "NSFileManager_NV.h"
 #import "NoteObject.h"
 #import "BufferUtils.h"
+#import "GlobalPrefs.h"
 
 @implementation NSDictionary (FontTraits)
 
@@ -53,7 +54,8 @@
 	id strokeWidthStyle = [dict objectForKey:NSStrokeWidthAttributeName];
 	id obliquenessStyle = [dict objectForKey:NSObliquenessAttributeName];
 	id linkStyle = [dict objectForKey:NSLinkAttributeName];
-	
+	id foregroundColor = [dict objectForKey:NSForegroundColorAttributeName];
+
 	if (linkStyle)
 		[self setObject:linkStyle forKey:NSLinkAttributeName];
 	if (strikethroughStyle)
@@ -64,6 +66,9 @@
 		[self setObject:obliquenessStyle forKey:NSObliquenessAttributeName];
 	if (hiddenDoneTagStyle)
 		[self setObject:hiddenDoneTagStyle forKey:NVHiddenDoneTagAttributeName];
+	if (foregroundColor && [[GlobalPrefs defaultPrefs] pastePreservesStyle] && [[GlobalPrefs defaultPrefs] pastePreservesColor])
+		[self setObject:foregroundColor forKey:NSForegroundColorAttributeName];
+
 }
 
 - (void)applyStyleInverted:(BOOL)opposite trait:(NSFontTraitMask)trait forFont:(NSFont*)font 

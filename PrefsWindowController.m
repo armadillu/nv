@@ -160,11 +160,17 @@
 }
 - (IBAction)changedStyledTextBehavior:(id)sender {
     [prefsController setPastePreservesStyle:[styledTextButton state] sender:self];
+	
+	[coloredTextButton setEnabled:[prefsController pastePreservesStyle]];
 }
+- (IBAction)changedColoredTextBehavior:(id)sender {
+	[prefsController setPastePreservesColor:[coloredTextButton state] sender:self];
+}
+	
 - (IBAction)changedAutoSuggestLinks:(id)sender {
     [prefsController setLinksAutoSuggested:[autoSuggestLinksButton state] sender:self];
 }
-
+	
 - (IBAction)changedMakeURLsClickable:(id)sender {
 	[prefsController setMakeURLsClickable:[makeURLsClickable state] sender:self];
 }
@@ -438,7 +444,8 @@
 	[window setShowsToolbarButton:NO];
 
     [self switchViews:nil];  //select last selected pane by default
-    
+	
+	[coloredTextButton setEnabled:[prefsController pastePreservesStyle]];
 }
 
 

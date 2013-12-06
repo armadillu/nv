@@ -123,6 +123,9 @@ BOOL ColorsEqualWith8BitChannels(NSColor *c1, NSColor *c2);
 - (void)setPastePreservesStyle:(BOOL)value sender:(id)sender;
 - (BOOL)pastePreservesStyle;
 
+- (void)setPastePreservesColor:(BOOL)value sender:(id)sender;
+- (BOOL)pastePreservesColor;
+
 - (void)setAutoFormatsDoneTag:(BOOL)value sender:(id)sender;
 - (BOOL)autoFormatsDoneTag;
 

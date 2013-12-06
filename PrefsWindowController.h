@@ -39,6 +39,7 @@
 	IBOutlet NSButton *confirmDeletionButton;
 	IBOutlet NSButton *quitWhenClosingButton;
 	IBOutlet NSButton *styledTextButton;
+	IBOutlet NSButton *coloredTextButton;
 	IBOutlet NSButton *autoSuggestLinksButton;
 	IBOutlet NSButton *softTabsButton;
 	IBOutlet NSButton *makeURLsClickable;
@@ -65,6 +66,7 @@
 - (IBAction)changedSearchHighlightColorWell:(id)sender;
 - (IBAction)changedMakeURLsClickable:(id)sender;
 - (IBAction)changedStyledTextBehavior:(id)sender;
+- (IBAction)changedColoredTextBehavior:(id)sender;
 - (IBAction)changedAutoSuggestLinks:(id)sender;
 - (IBAction)setAppShortcut:(id)sender;
 - (IBAction)changeBodyFont:(id)sender;

@@ -74,6 +74,9 @@
 	
 	NoteObject *currentNote;
 	NSArray *savedSelectedNotes;
+
+	NSStatusItem	*_statusItem;
+
 }
 
 void outletObjectAwoke(id sender);
@@ -84,6 +87,8 @@ void outletObjectAwoke(id sender);
 - (void)setupViewsAfterAppAwakened;
 - (void)runDelayedUIActionsAfterLaunch;
 - (void)updateNoteMenus;
+
+- (void)clickMenuItem;
 
 - (IBAction)renameNote:(id)sender;
 - (IBAction)deleteNote:(id)sender;

@@ -292,11 +292,25 @@ void outletObjectAwoke(id sender) {
 	 @selector(setAutoCompleteSearches:sender:), nil];   //when to tell notationcontroller to build its title-prefix connections
 	
 	[self performSelector:@selector(runDelayedUIActionsAfterLaunch) withObject:nil afterDelay:0.0];
-			
+
+	_statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
+    [_statusItem setHighlightMode:YES];
+    [_statusItem setEnabled:YES];
+	//[_statusItem setMenu:menu];
+	[_statusItem setTarget:self];
+	[_statusItem setAction:@selector(clickMenuItem)];
+	[_statusItem setImage: [NSImage imageNamed:@"menuIcon"]];
+
 	return;
 terminateApp:
 	[NSApp terminate:self];
 }
+
+- (void)clickMenuItem{
+	[NSApp activateIgnoringOtherApps:YES];
+	[window makeKeyAndOrderFront:self];
+}
+
 
 - (void)handleGetURLEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent {
 	

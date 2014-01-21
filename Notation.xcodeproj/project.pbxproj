@@ -195,6 +195,8 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		BB7BF38C188EA58200D9B3D9 /* menuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BB7BF38A188EA58200D9B3D9 /* menuIcon.png */; };
+		BB7BF38D188EA58200D9B3D9 /* menuIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB7BF38B188EA58200D9B3D9 /* menuIcon@2x.png */; };
 		D3EECA00106F66C70023D7F8 /* NVPasswordGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EEC9FE106F66C70023D7F8 /* NVPasswordGenerator.m */; };
 /* End PBXBuildFile section */
 
@@ -596,6 +598,8 @@
 		57F27FB81197407400C63ACF /* SearchCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCommand.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Notational Velocity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Notational Velocity.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB7BF38A188EA58200D9B3D9 /* menuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menuIcon.png; path = Images/menuIcon.png; sourceTree = "<group>"; };
+		BB7BF38B188EA58200D9B3D9 /* menuIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menuIcon@2x.png"; path = "Images/menuIcon@2x.png"; sourceTree = "<group>"; };
 		D3EEC9FE106F66C70023D7F8 /* NVPasswordGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVPasswordGenerator.m; sourceTree = "<group>"; };
 		D3EEC9FF106F66C70023D7F8 /* NVPasswordGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVPasswordGenerator.h; sourceTree = "<group>"; };
 		D87CEA44185149A50030507E /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
@@ -964,6 +968,8 @@
 		219196B109D4F1DB00586B15 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BB7BF38A188EA58200D9B3D9 /* menuIcon.png */,
+				BB7BF38B188EA58200D9B3D9 /* menuIcon@2x.png */,
 				21C3DBF312D23C83002F707A /* Notality.icns */,
 				21DB407D12D5383F0057F52B /* IBeamInverted.png */,
 				216DA1AC12D15F310004B9CE /* ListDividerDrag.png */,
@@ -1291,6 +1297,7 @@
 				212DCB310A6AE38500F74E46 /* EncodingsManager.nib in Resources */,
 				212DCFF70A6E005000F74E46 /* DeletionManager.nib in Resources */,
 				2144950F0ADC883100E2A2B6 /* PasswordAssistantButton.tif in Resources */,
+				BB7BF38D188EA58200D9B3D9 /* menuIcon@2x.png in Resources */,
 				214495100ADC883100E2A2B6 /* PasswordAssistantButtonPressed.tif in Resources */,
 				2144957A0ADCC06300E2A2B6 /* PassphrasePicker.nib in Resources */,
 				214495870ADCC07E00E2A2B6 /* PassphraseChanger.nib in Resources */,
@@ -1344,6 +1351,7 @@
 				21286598128B14F10013820A /* Wie funktioniert dieses Programm?.nvhelp in Resources */,
 				21C0F8A212C7E7160068693F /* Fonts & Colors.tiff in Resources */,
 				216D9C2D12CFEF2A0004B9CE /* LinkBack.tif in Resources */,
+				BB7BF38C188EA58200D9B3D9 /* menuIcon.png in Resources */,
 				216D9C2E12CFEF2A0004B9CE /* LinkBackPressed.tif in Resources */,
 				216DA1AD12D15F310004B9CE /* ListDividerDrag.png in Resources */,
 				21C3DBF412D23C83002F707A /* Notality.icns in Resources */,
@@ -1926,6 +1934,7 @@
 		212B842409780B5000F3597F /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1992,6 +2001,7 @@
 		212B842509780B5000F3597F /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
@@ -2011,10 +2021,12 @@
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_PFE_FILE_C_DIALECTS = "c objective-c";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Notation_Prefix.pch;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
@@ -2055,6 +2067,7 @@
 		212B842609780B5000F3597F /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",

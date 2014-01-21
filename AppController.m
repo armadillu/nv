@@ -301,6 +301,8 @@ void outletObjectAwoke(id sender) {
 	[_statusItem setAction:@selector(clickMenuItem)];
 	[_statusItem setImage: [NSImage imageNamed:@"menuIcon"]];
 
+	[NSApp setActivationPolicy:NSApplicationActivationPolicyAccessory];
+
 	return;
 terminateApp:
 	[NSApp terminate:self];

@@ -226,5 +226,7 @@
 	<string>Notational.net</string>
 	<key>SmartCrashReports_EmailTicket</key>
 	<string>SCR-51ED0F7B2A</string>
+	<key>LSUIElement</key>
+	<false/>
 </dict>
 </plist>
